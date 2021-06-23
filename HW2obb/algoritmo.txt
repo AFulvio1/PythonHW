@@ -1,0 +1,7 @@
+Inizialmente creo una copia della lista delle posizioni iniziali (lista2) per poter effetturare gli spostamenti/eliminazioni.
+Scorro uno ad uno tutti gli eventi (lista1).
+Se la stringa dell'evento corrente ha una 'e' come primo carattere, cancello dalla lista il pilota indicato dagli uleriori caratteri (dell'evento corrente).
+Se la stringa dell'evento corrente ha una 's' come primo carattere, salvo l'indice nella lista rispettivo agli ulteriori caratteri (dell'evento corrente).
+Successivamente inserisco in due variabili l'elemento della lista con l'indice estratto e il suo successivo, per poi andare a scambiare i due piloti nella lista e quindi effettuare il sorpasso.
+Infine ritorno la lista copia creata all'inizio dove sono state effettuate tutte le operazioni.
+ 
