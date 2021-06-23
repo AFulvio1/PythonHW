@@ -1,0 +1,25 @@
+(es1) Inizializzo la variabile che andrà a contenere le ricerche. Con la funzione 'decoder' estraggo la lista di stringhe da trovare e la matrice in cui trovarle.
+
+      (decoder) Leggo il testo contenuto nel file all'indirizzo 'ftesto' e lo inserisco in una variabile. Inizializzo due liste vuore che andranno a contenere
+		la matrice e la lista di stringhe. Suddivido il testo quando trovo due '\n'. Con una list comprehension elimino tutte 
+		le stringhe vuote che si sono andare a creare con l'operazione di split precedente. Nelle due parti che rimangono nella variabile 'testo' vado
+		a fare lo split quando trovo un '\n'. Per ogni stringa della seconda parte dell variabile testo (parte con le stringhe da cercare) vado a controllare 
+		se la stringa corrente è vuota, se lo è continuo con la prossima stringa, al contrario se è presente un carattere vuoto vado a fare lo split 
+		della stringa e inserisco ogni parte risultante nella variabile 'finale', 'lista'. Se non ci sono spazi bianchi la stringa è formata da una sola 
+		parola quindi posso inserirla nella variabile 'lista'. Scorro anche la prima parte della variabile testo (parte con le stringhe che formano la matrice)
+		e se una stringa non è vuota la inserisco nella variabile 'finale', 'matrice'. Ritorno le liste contenenti la matrice e le stringhe da cercare.
+
+	Per ogni 'nome' della 'lista' inizializzo un contatore e, per ogni indice della matrice, se il primo carattere del 'nome' è presente nella riga della matrice
+	con indice corrente, con una list comprehension inserisco in una lista tutti gli indici in cui è presente il primo carattere del 'nome'.
+	Per ogni indice presente nella lista 'lista_iniziali' inizializzo una stringa vuota per contenere gli spostamenti da fare nella matrice e tramite la funzione
+	'verifica_presenze' cerco tutti questi spostamenti e li vado ad inserire nella variabile 'spostamenti_finali'.
+
+	(verifica_presenze) In 'verifica_presenze' controllo 3 'macro'-casi, quello in cui la lettera da trovare è sia nella casella della matrice di destra e 
+			    in quella sottostante, quello in cui è nella casella di destra e infine se è nella casella sottostante. (FUNZIONE RICORSIVA)
+
+	Se la lunghezza della stringa degli spostamenti è uguale alla lunghezza del nome corrente meno uno, ho trovato la parola e quindi la inserisco nella lista
+	del risutato insieme alle coordinate della prima lettera trovata, incremento il contatore di 1 e chiudo il ciclo for, altrimenti continuo con il prossimo 
+	indice. Alla fine dello scorrimento di tutti gli indici oppure alla chiusura del ciclo da parte del break, se il contatore è ad 1 termino la ricerca della
+	parola e passo alla successiva, altrimenti continuo. Se una parola non è presente a partire da nessuna riga della matrice, alla fine del ciclo quindi se il
+	contatore è ancora a 0 aggiungo '-1' al risultato.
+	Alla fine che ho cercato tutte le stringhe della 'lista' nella 'matrice', torno il risultato.
