@@ -1,0 +1,12 @@
+Inizializzo una lista vuota dove inserire il risultato. Apro il file e inserisco il contenuto in una variabile. Tramite la funzione ausiliaria 'decoder'
+divido la stringa in parole (come da traccia) e ne estraggo il valore dalla prima riga che mi indica la lunghezza della sottostringa nascosta, 
+per poi dare in output la lista di parole in cui cercare la sottostringa e la lunghezza della sottostringa.
+Tramite la funzione ausiliaria 'trovaparole' suddivido la prima parola della lista (attraverso delle slice ripetute)in tante sottosequenze
+e contemporaneamente inizio ad inserire queste prime occorrenze nel dizionario apposito (controllando che le sottostringhe siano uniche 
+e non si presentino due volte in una stringa). Alla fine di questo passaggio ho una lista di sottostringhe e un dizionario con le prime occorrenze di esse 
+(sottoforma di valore). Dopodichè itero esternamente nella lista delle parole (escludendo la prima che ho già contato) e itero internamente nella lista 
+delle possibili sottosequenze. Se la sottosequenza è nella parola corrente, controllo che non sia presente due volte e, in caso affermativo, aggiugo l'occorrenza
+nel dizionario. Alla fine di questi due controlli faccio la comparazione tra il numero di occorrenze attuali della sottostringa, se sono uguali al numero di parole
+della lista vuol dire che la sottosequenza in questione si ripete per ogni parola e quindi è quella esatta.
+Ritornando all'algoritmo principale una volta che ho la sottostringa desiderata itero la lista di parole e per ogni parola aggiungo al risultato l'indice della prima
+lettera della sottostringa. Alla fine ritorno la lista con gli indici trovati in precedenza.

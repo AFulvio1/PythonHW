@@ -1,0 +1,24 @@
+(es1) Inizializzo la variabile che andrà a contenere il risultato, salvo in due variabili i colori nero e verde e successivamente carico in una variabile
+      la matrice dell'immagine. Tramite la funzione 'trova_griglia' faccio un unpack dove carico nelle rispettive variabili: una lista dove ho le coordinate
+      delle ascisse, una lista con le coordinate delle ordinate, la x e la y da cui partire (il primo pixel verde in alto a sinitra della griglia), la distanza 
+      fra due pixel verdi nella griglia e la lunghezza di un lato dei quadrati da cercare.
+      Successivamente scorro la lista delle ordinate che mi sono trovato calcolando l'ordinata in cui dovrebbe finire il lato dell'ipotetico quadrato,
+      scorro la lista delle ascisse e mi calcolo l'ascissa in cui dovrebbe finire il lato dell'ipotetico quadrato. Se nella slice che va dalla x corrente fino
+      all'ascissa in cui dovrebbe finire il lato trovo un pixel nero continuo lo scorrimento del 'for', altrimenti faccio una chiamata della funzione 'controllo'
+      per vedere se effettivamente il lato che ho trovato è rispettivamente il lato superiore di uno dei quadrati che stiamo cercando.
+
+(trova_griglia) Inizializzo 3 variabili, un contatore e due liste vuote. Scorro indici e le righe della matrice, se un pixel verde è presente nella riga e
+                il contatore è ancora a 0, trovo l'indice del primo pixel verde e lo aggiungo ad una lista con l'indice rispettivo della riga (così da trovarmi
+                il vertice in alto a sinistra), infine aumento il contatore. Quando troverò il prossimo pixel verde in una riga e ovviamente il contatore sarà ad 1
+                calcolo la distanza tra il pixel corrente e quello trovato precedentemente così da avere la distanza fra due pixel verdi nella griglia, e quindi 
+                moltiplicandolo per k trovo la lunghezza del lato, infine blocco il ciclo 'for'.
+                Poi scorro un for con un range che va dal pixel corrente fino alla fine della riga corrente, a passi della distanza tra pixel verdi.
+                se il pixel corrente è verde ed il successivo si trova dentro la matrice, lo aggiungo alla lista delle ascisse, poi faccio la stessa cosa anche 
+                per le ordinate.
+
+(controllo) Inizializzo 2 contatori. Con un for e un range che va dall'ordinata corrente fino a quella di fine lato, aumento di 1 il conteggio di cont1 per
+            ogni passaggio del for, e controllo che nell'ordinata corrente sia il pixel a destra che quello a sinistra non siano neri. Se sono neri interrompo 
+            il for, in caso contrato incremento il cont2 di 1. Faccio la stessa cosa per il lato inferiore controllando che per ogni x del for il pixel correlato
+            non sia nero. Infine se i due contatori sono uguali ritorno 1, in caso contrario 0. (il primo contatore conta tutti i passi dei cicli, così che 
+            se non ho mai trovato un pixel nero e quindi non ho mai bloccato il ciclo, i contatori sono uguali e ho effettivamente trovato un quadrato)
+
