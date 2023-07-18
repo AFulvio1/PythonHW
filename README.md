@@ -1,2 +1,2 @@
-# HomeWork-Python
-HomeWork of the course "Fondamenti di Informatica" in Sapienza, University in Rome.
+# Python HomeWork
+HomeWork for the "Programming Fundamentals" course of the Sapienza University of Rome
